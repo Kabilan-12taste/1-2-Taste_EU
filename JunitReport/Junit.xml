@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite failures="1" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="1" time="10.433223">
+    <testcase classname="To Check then 1-2 taste Application Add to Cart Functionality" name="Add a product to the cart" time="10.433223">
+        <failure message="org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[contains(@class, 'woocommerce-message')]&quot;}&#10;  (Session info: chrome=134.0.6998.89)&#10;For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'LAPTOP-AOJIHBP7', ip: '192.168.1.135', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.2'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.89, chrome: {chromedriverVersion: 134.0.6998.88 (7e3d5c978c6d..., userDataDir: C:\Users\Lenovo\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61716}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}&#10;Session ID: 8ad704809380f383d3be3f8d88f67ef8&#10;*** Element info: {Using=xpath, value=//div[contains(@class, 'woocommerce-message')]}&#13;&#10;&#9;at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)&#13;&#10;&#9;at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)&#13;&#10;&#9;at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)&#13;&#10;&#9;at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)&#13;&#10;&#9;at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)&#13;&#10;&#9;at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)&#13;&#10;&#9;at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)&#13;&#10;&#9;at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)&#13;&#10;&#9;at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)&#13;&#10;&#9;at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)&#13;&#10;&#9;at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)&#13;&#10;&#9;at org.openqa.selenium.By$ByXPath.findElement(By.java:353)&#13;&#10;&#9;at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)&#13;&#10;&#9;at org.pages.AddToCartRequestQuotePage.getConfirmationMessage(AddToCartRequestQuotePage.java:45)&#13;&#10;&#9;at org.stepdefinitions.AddToCartRequestQuoteSteps.user_should_see_a_confirmation_message_with_the_product_name(AddToCartRequestQuoteSteps.java:44)&#13;&#10;&#9;at ✽.User should see a confirmation message with the product name(file:/C:/Users/Lenovo/eclipse-workspace/1-2Taste-EU/src/test/resources/FeatureFiles/AddToCartandReqQuote.feature:7)&#13;&#10;"><![CDATA[Given User navigate to the product listing page.............................passed
+When User increase the quantity using the plus button.......................passed
+And User click on the Add to Cart button....................................passed
+Then User should see a confirmation message with the product name...........failed
+And the product should be added to the cart.................................skipped
+
+StackTrace:
+org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//div[contains(@class, 'woocommerce-message')]"}
+  (Session info: chrome=134.0.6998.89)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'LAPTOP-AOJIHBP7', ip: '192.168.1.135', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.89, chrome: {chromedriverVersion: 134.0.6998.88 (7e3d5c978c6d..., userDataDir: C:\Users\Lenovo\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61716}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 8ad704809380f383d3be3f8d88f67ef8
+*** Element info: {Using=xpath, value=//div[contains(@class, 'woocommerce-message')]}
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.pages.AddToCartRequestQuotePage.getConfirmationMessage(AddToCartRequestQuotePage.java:45)
+	at org.stepdefinitions.AddToCartRequestQuoteSteps.user_should_see_a_confirmation_message_with_the_product_name(AddToCartRequestQuoteSteps.java:44)
+	at ✽.User should see a confirmation message with the product name(file:/C:/Users/Lenovo/eclipse-workspace/1-2Taste-EU/src/test/resources/FeatureFiles/AddToCartandReqQuote.feature:7)
+]]></failure>
+    </testcase>
+</testsuite>
