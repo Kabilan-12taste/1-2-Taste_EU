@@ -5,26 +5,33 @@ import java.util.ArrayList;
 import java.util.List;
 
 import net.masterthought.cucumber.ReportBuilder;
+import net.masterthought.cucumber.Configuration;
 
 public class JVMReport {
 
-	public static void generateJVMReport(String jsonpath) {
-		
-		File f = new File("C:\\Users\\Lenovo\\eclipse-workspace\\1-2Taste-EU\\JVMReport");
+    public static void generateJVMReport(String jsonPath) {
+        // Get the project directory dynamically
+        String reportPath = System.getProperty("user.dir") + "/target/JVMReport";
+        File reportDirectory = new File(reportPath);
 
-		net.masterthought.cucumber.Configuration c = new net.masterthought.cucumber.Configuration(f, "LoginWithValid");
+        // Ensure directory exists
+        if (!reportDirectory.exists()) {
+            reportDirectory.mkdirs();
+        }
 
-		c.addClassifications("OS Name", "Windows");
-		c.addClassifications("OS Version", "10");
-		c.addClassifications("Browser", "Chrome");
-		c.addClassifications("Project_Name", "1-2 Taste EU");
+        // Configure JVM Report
+        Configuration config = new Configuration(reportDirectory, "1-2 Taste EU");
+        config.addClassifications("OS Name", System.getProperty("os.name"));
+        config.addClassifications("OS Version", System.getProperty("os.version"));
+        config.addClassifications("Browser", "Chrome");
+        config.addClassifications("Project Name", "1-2 Taste EU");
 
-		List<String> li = new ArrayList<String>();
-		li.add(jsonpath);
+        // Add JSON file to report
+        List<String> jsonFiles = new ArrayList<>();
+        jsonFiles.add(jsonPath);
 
-		ReportBuilder r = new ReportBuilder(li, c);
-		r.generateReports();
-	}
-
-
+        // Generate the report
+        ReportBuilder reportBuilder = new ReportBuilder(jsonFiles, config);
+        reportBuilder.generateReports();
+    }
 }
