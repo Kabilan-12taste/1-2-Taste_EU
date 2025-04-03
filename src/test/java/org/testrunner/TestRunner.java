@@ -9,7 +9,7 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "src/test/resources/FeatureFiles/AddToCartandReqQuote.feature",
+        features = "src/test/resources/FeatureFiles/Search.feature",
         glue = "org.stepdefinitions",
         plugin = {
                 "pretty",
