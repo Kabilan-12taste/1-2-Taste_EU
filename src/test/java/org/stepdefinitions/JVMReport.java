@@ -1,37 +1,39 @@
 package org.stepdefinitions;
 
+import net.masterthought.cucumber.Configuration;
+import net.masterthought.cucumber.ReportBuilder;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-import net.masterthought.cucumber.ReportBuilder;
-import net.masterthought.cucumber.Configuration;
-
 public class JVMReport {
-
     public static void generateJVMReport(String jsonPath) {
-        // Get the project directory dynamically
-        String reportPath = System.getProperty("user.dir") + "/target/JVMReport";
-        File reportDirectory = new File(reportPath);
-
-        // Ensure directory exists
-        if (!reportDirectory.exists()) {
-            reportDirectory.mkdirs();
+        // Directory where the reports will be saved
+        File reportOutputDirectory = new File("target/cucumber-reports");
+        
+        // List to hold the path of the JSON files
+        List<String> jsonFiles = new ArrayList<>();
+        
+        // Add the path to the JSON file(s)
+        File jsonFile = new File(jsonPath);
+        if (!jsonFile.exists()) {
+            System.out.println("ERROR: Cucumber JSON file not found! Path: " + jsonPath);
+            return;
         }
 
-        // Configure JVM Report
-        Configuration config = new Configuration(reportDirectory, "1-2 Taste EU");
-        config.addClassifications("OS Name", System.getProperty("os.name"));
-        config.addClassifications("OS Version", System.getProperty("os.version"));
-        config.addClassifications("Browser", "Chrome");
-        config.addClassifications("Project Name", "1-2 Taste EU");
-
-        // Add JSON file to report
-        List<String> jsonFiles = new ArrayList<>();
         jsonFiles.add(jsonPath);
 
-        // Generate the report
+        // Configuration for the report
+        Configuration config = new Configuration(reportOutputDirectory, "12Taste B2B");
+        config.addClassifications("Platform", "Windows");
+        config.addClassifications("Browser", "Chrome");
+        config.addClassifications("Environment", "QA");
+
+        // Create a report builder
         ReportBuilder reportBuilder = new ReportBuilder(jsonFiles, config);
+        
+        // Generate the report
         reportBuilder.generateReports();
+        System.out.println("JVM Report successfully generated at: " + reportOutputDirectory.getAbsolutePath());
     }
 }

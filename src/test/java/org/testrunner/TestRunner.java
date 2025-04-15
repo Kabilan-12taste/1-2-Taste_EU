@@ -3,28 +3,27 @@ package org.testrunner;
 import org.junit.AfterClass;
 import org.junit.runner.RunWith;
 import org.stepdefinitions.JVMReport;
-
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "src/test/resources/FeatureFiles/AddToCartandReqQuote.feature",
-        glue = "org.stepdefinitions",
-        plugin = {
-                "pretty",
-                "html:target/HtmlReport",
-                "junit:target/JunitReport/Junit.xml",
-                "json:target/JsonReport/Jsonreport.json"
-        }
+    features = "src/test/resources/FeatureFiles", // Relative path
+    glue = "org.stepdefinitions",
+    tags = "not @skip",
+    plugin = {
+        "pretty",
+        "html:target/cucumber-reports/CucumberReport.html",  
+        "json:target/cucumber-reports/CucumberReport.json",
+        "junit:target/cucumber-reports/CucumberReport.xml",
+        "rerun:target/failed_scenarios.txt"
+    },
+    monochrome = true
 )
-
 public class TestRunner {
-
     @AfterClass
-    public static void jvm() {
-        // Get project directory dynamically
-        String jsonReportPath = System.getProperty("user.dir") + "/target/JsonReport/Jsonreport.json";
-        JVMReport.generateJVMReport(jsonReportPath);
+    public static void generateReport() {
+        System.out.println("Generating JVM Report...");
+        JVMReport.generateJVMReport("target/cucumber-reports/CucumberReport.json");
     }
 }
