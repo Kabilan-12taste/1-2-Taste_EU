@@ -2,11 +2,11 @@ pipeline {
     agent any
 
     environment {
-        MAVEN_HOME = tool 'Maven 3' // Make sure this matches your Jenkins tool config
+        MAVEN_HOME = tool 'Maven 3' // Make sure this matches your Jenkins Maven tool name exactly
     }
 
     triggers {
-        githubPush() // trigger build on push event from webhook
+        githubPush() // Trigger build on push event from GitHub webhook
     }
 
     stages {
@@ -18,7 +18,7 @@ pipeline {
 
         stage('Build & Run Tests') {
             steps {
-                bat "${MAVEN_HOME}/bin/mvn clean test"
+                bat "\"${MAVEN_HOME}\\bin\\mvn.cmd\" clean test"
             }
         }
 
