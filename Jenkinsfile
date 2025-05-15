@@ -18,7 +18,7 @@ pipeline {
 
         stage('Build & Run Tests') {
             steps {
-                sh "${MAVEN_HOME}/bin/mvn clean test"
+                bat "${MAVEN_HOME}/bin/mvn clean test"
             }
         }
 
